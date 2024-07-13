@@ -20,8 +20,6 @@ class Employee {
     displaySalary() {
         console.log(`" Salary : $${this.salary} "`);
     };
-    
-    
 };
 
 //Inside the class's constructor, set these parameters as properties of the new object.
