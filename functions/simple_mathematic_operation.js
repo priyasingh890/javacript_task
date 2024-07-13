@@ -1,36 +1,36 @@
-// a  Add: Create a callback function addNumbers that takes two numbers and returns their sum.
-function addNumbers( num1, num2 ) {
-    return num1+num2;
+// a. Create a callback function doubleNumber that takes a number and returns its double.
+
+
+function doubleNumber( num ) {
+    return ( num + num );
 };
 
-// b Multiply: Create a callback function multiplyNumbers that takes two numbers and returns their product
-function multiplyNumbers(num1, num2) {
-    return num1*num2;
+// b. Create another callback function squareNumber that takes a number and returns its square.
+function squareNumber( num ) {
+    return num ** 2;
 };
 
-//c Subtract: Create a callback function subtractNumbers that takes two numbers and returns the result of subtracting the second number from the first.
-function subtractionNumbers(num1, num2) {
-    return num1-num2;
+//c. Create another callback function incrementNumber that takes a number and returns the number incremented by one.
+ function incrementNumber(num) {
+    let i = 1;
+    i = i + num;
+    return i;
 };
 
-// d Divide: Create a callback function divideNumbers that takes two numbers and returns the result of dividing the first number by the second, ensuring to handle division by zero.
-function divideNumbers(num1, num2) {
-    return num1/num2;
+// d. Define a function performOperation that accepts two parameters: num (a number on which to perform the operation), and operation (a callback function that specifies the operation to be performed on num). Inside performOperation, call the operation function and pass num as an argument. The function should return the result
+function performOperation( num, operation ) {
+   return ( operation( num ) )
+
 };
+let double = performOperation( 45, doubleNumber );
+console.log( double );
 
-// e Define a function performArithmetic that accepts three parameters: num1 and num2 (the numbers on which to perform the operation), and operation (a callback function that specifies the arithmetic operation to be performed on num1 and num2). Inside performArithmetic, call the operation function and pass num1 and num2 as arguments. The function should return the result.
-function performArithmetic(num1, num2, operation) {
-    return operation(num1, num2);
-};
+// e Call performOperation() with a number and each of the callback functions in turn to see the results of the operations. Log the result to the console for each call to performOperation.
+let double1 = performOperation( 45, doubleNumber );
+console.log(double1);
 
-// f Call performArithmetic with different pairs of numbers and each callback function to see the results of the arithmetic operations.
-let result = performArithmetic( 45, 78, addNumbers );
-console.log(result);
+let double2 = performOperation( 45, incrementNumber );
+console.log(double2);
 
-result = performArithmetic( 56, 100, multiplyNumbers );
-console.log(result);
-
-result = performArithmetic( 90, 23, subtractionNumbers );
-console.log(result);
-
-result = performArithmetic( 78, 23, divideNumbers );
+let double3 = performOperation( 45, squareNumber );
+console.log(double3);
